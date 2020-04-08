@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "moduleResolution": "Node",
+        "jsx": "react",
+        "watch": false,
+        "target": "ES5",
+        "experimentalDecorators": true,
+        "lib": [
+            "dom",
+            "es7"
+         ]
+    }
+}

@@ -1,0 +1,32 @@
+@import "variables";
+
+@import "~bootstrap/scss/bootstrap";
+
+
+
+// MOVE TO OWN SCSS FILE
+.conversation-list {
+    display: flex;
+
+    .conversation-container {
+        padding: 35px;
+    }
+}
+
+.message-list-container {
+    height: 20em;
+    overflow: auto;
+
+    .message-container {
+        display: flex;
+        padding: 0.2em;
+        .current-user-message {
+            margin-left: auto;
+            background-color: green;
+        }
+
+        .other-user-message {
+            background-color: grey;
+        }
+    }
+}
