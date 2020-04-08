@@ -14,11 +14,7 @@ import AuthenticationClient from '../../api/client/AuthenticationClient';
 import AuthenticationResponse from '../../api/response/AuthenticationResponse';
 import SocketConnection from '../../api/connections/SocketConnection';
 
- const API_BASE = "https://messenger-dev-api-v1.herokuapp.com/";
- const CABLE_BASE = "wss://messenger-dev-api-v1.herokuapp.com/cable";
-
-//const API_BASE = "http://localhost:3000/";
-// const CABLE_BASE = "ws://localhost:3000/cable"; 
+import { API_BASE, API_WS } from '../../globals';
 
 export interface IConversationState {
     user: IUser;
@@ -34,12 +30,11 @@ export interface IConversationState {
 }
 
 export default class ConversationState implements IConversationState {
-
     _messageClient = new MessageClient(API_BASE);
     _conversationClient = new ConversationClient(API_BASE);
     _userClient = new UserClient(API_BASE);
     _authenticationClient = new AuthenticationClient(API_BASE);
-    _socketConnection = new SocketConnection(CABLE_BASE);
+    _socketConnection = new SocketConnection(API_WS);
 
     @observable user = { conversations: [] } as IUser;
 
